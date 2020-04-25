@@ -1,0 +1,12 @@
+event_id,timestamp,longitude,latitude,economia,tipo,municipio,atencion,mensaje
+1,2016-05-01 00:55:25,-110.257663,29.751371,Oferta,Medicamento,mun1,Atendido,mensaje1
+2,2016-04-01 00:54:12,-116.363731,32.24095,Demanda,Despensas,mun2,Atendido,mensaje2
+3,2016-03-01 00:08:05,-96.146963,19.181358,Demanda,Medicamento,mun3,Sin atender,mensaje3
+4,2016-02-01 00:06:40,-96.735904,17.076536,Demanda,Despensas,mun4,Atendido,mensaje4
+5,2016-11-01 00:07:18,-99.132057,19.338425,Oferta,Despensas,mun5,Atendido,mensaje5
+6,2016-10-01 00:27:21,-100.406443,20.610516,Oferta,Despensas,mun6,Sin atender,mensaje6
+7,2016-09-01 00:15:13,-100.966372,22.154366,Demanda,Medicamento,mun7,Atendido,mensaje7
+8,2016-08-01 00:15:35,-105.600273,28.633883,Demanda,Medicamento,mun8,Atendido,mensaje8
+9,2016-11-01 00:15:33,-100.157604,26.106845,Demanda,Despensas,mun9,Sin atender,mensaje9
+10,2016-12-01 00:41:31,-90.526278,19.828953,Oferta,Despensas,mun10,Sin atender,mensaje10
+11,2016-08-01 00:44:13,-92.905627,17.984326,Oferta,Medicamento,mun11,Atendido,mensaje11

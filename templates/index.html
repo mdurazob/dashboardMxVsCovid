@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plataforma MéxicoVsCovid19</title>
+  <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+  <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+  <link rel="stylesheet" href="./static/lib/css/dc.min.css">
+  <link rel="stylesheet" href="./static/lib/css/leaflet.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body class="application">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div class="container-fluid">
+     
+      <div class="navbar-header">
+         <img src="https://raw.githubusercontent.com/mdurazob/covidnotebook/master/header.png"></img>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="row">
+
+          <!-- Time Chart --> 
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+  Línea de tiempo
+                </div>
+              <div class="chart-stage">
+                <div id="time-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Time Chart --> 
+
+          <!-- Brand -->
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Tipo de petición o donación
+              </div>
+              <div class="chart-stage">
+                <div id="tipo-row-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Brand -->
+
+
+          <div class="col-sm-6">
+
+            <div class="row">
+            <!-- Gender -->
+            <div class="col-sm-12">
+              <div class="chart-wrapper">
+                <div class="chart-title">
+                  Oferta/Demanda
+                </div>
+                <div class="chart-stage">
+                  <div id="economia-row-chart"></div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- Gender -->
+
+            <!-- Age Segment -->
+             <div class="row">
+            <div class="col-sm-12">
+              <div class="chart-wrapper">
+                <div class="chart-title">
+                  Estatus
+                </div>
+                <div class="chart-stage">
+                  <div id="atencion-row-chart"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Age Segment -->
+          </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="col-sm-2">
+        <div class="row">
+
+          <!-- Chinese Province -->  
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Entidad federativa
+              </div>
+              <div class="chart-stage">
+                <div id="location-row-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Chinese Province -->  
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-4">
+
+        <div class="row">
+          <!-- Map -->  
+          <div class="col-sm-12"> 
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Mapa
+              </div>
+              <div class="chart-stage">
+                <div id="map" style="width: 480px; height: 380px"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Map -->  
+        </div>
+
+        <div class="row">
+          <!-- Number of events -->  
+          <div class="col-sm-12"> 
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Recuento
+              </div>
+              <div class="chart-stage">
+                <div id="number-records-nd"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Number of events -->  
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <table id="mytable" class="greyGridTable" width=70% align="center">
+        <thead>
+            <tr>
+                <th>
+                    <h5>Fecha</h5></th><th><h5>Petición/Donación</h5></th><th><h5>Municipio</h5></th><th><h5> Mensaje</h5></th><th><h5> Estatus</h5></th>
+                </tr>
+        </thead>
+    </table>
+
+  <hr>
+ 
+
+  <script src="./static/lib/js/jquery.min.js"></script>
+  <script src="./static/lib/js/bootstrap.min.js"></script>
+  <script src="./static/lib/js/underscore-min.js"></script>
+  <script src="./static/lib/js/crossfilter.js"></script>
+  <script src="./static/lib/js/d3.min.js"></script>
+  <script src="./static/lib/js/dc.min.js"></script>
+  <script src="./static/lib/js/queue.js"></script>
+  <script src="./static/lib/js/leaflet.js"></script>
+  <script src="./static/lib/js/leaflet-heat.js"></script>
+  <script src="./static/lib/js/keen.min.js"></script>
+  <script src='./static/js/graphs.js' type='text/javascript'></script>
+
+
+</body>
+</html>

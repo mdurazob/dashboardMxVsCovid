@@ -1,0 +1,104 @@
+
+/*
+ * Full-page application style
+ */
+
+table.greyGridTable {
+  border: 2px solid #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.greyGridTable td, table.greyGridTable th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 4px;
+}
+table.greyGridTable tbody td {
+  font-size: 13px;
+  color: #696969;
+}
+table.greyGridTable td:nth-child(even) {
+  background: #D2F9F3;
+}
+table.greyGridTable thead {
+  background: #FFFFFF;
+  border-bottom: 2px solid #696969;
+}
+table.greyGridTable thead th {
+  font-size: 15px;
+  font-weight: normal;
+  color: #696969;
+  text-align: center;
+  border-left: 2px solid #696969;
+}
+table.greyGridTable thead th:first-child {
+  border-left: none;
+}
+
+table.greyGridTable tfoot td {
+  font-size: 14px;
+}
+
+body.application {
+  background: #f2f2f2;
+  padding: 60px 20px 0;
+}
+body.application > .container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+body.application div[class^="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+body.application div[class^="col-"] div[class^="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+body.application hr {
+  border-color: #d7d7d7;
+  margin: 10px 0;
+}
+
+.navbar-header img {
+  margin: 7px 10px 4px;
+}
+.navbar-inverse {
+  background-color: #54baad;
+  border-color: #bcc2c9;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar a.navbar-brand {
+  color: #fbfbfb;
+  text-decoration: none;
+}
+
+.chart-wrapper {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.chart-wrapper .chart-title {
+  border-bottom: 1px solid #d7d7d7;
+  color: #666;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 7px 10px 4px;
+}
+
+.chart-wrapper .chart-stage {
+  /*min-height: 240px;*/
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.chart-wrapper .chart-notes {
+  background: #fbfbfb;
+  border-top: 1px solid #e2e2e2;
+  color: #808080;
+  font-size: 12px;
+  padding: 8px 10px 5px;
+}
