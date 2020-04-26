@@ -108,10 +108,11 @@ function makeGraphs(error, recordsJson) {
         .height(480)
         .dimension(dateDim)
         .group(function(d) {return "";})
-        .columns([function(d) { return d.timestamp.getDate() + "/" + (d.timestamp.getMonth() + 1) + "/" + d.timestamp.getFullYear(); },
+        .columns([function (d) { return d.event_id },
+        		function(d) { return d.timestamp.getDate() + "/" + (d.timestamp.getMonth() + 1) + "/" + d.timestamp.getFullYear(); },
                   function (d) { return d.tipo },
-                  function (d) { return d.mensaje },
-                  function (d) { return d.atencion }])
+                  function (d) { return d.atencion },
+                   function (d) { return d.mensaje }])
         .sortBy(function (d) { return +d.timestamp })
         .order(d3.descending);
 
