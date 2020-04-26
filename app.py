@@ -7,7 +7,7 @@ import json
 
 
 data_path = './input'
-n_samples = 11
+n_samples = 3685
 
 
 def get_location(longitude, latitude, provinces_json):
