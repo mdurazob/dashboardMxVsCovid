@@ -46,7 +46,7 @@ def get_data():
 
     df['location'] = df.apply(lambda row: get_location(row['longitude'], row['latitude'], provinces_json), axis=1)
 
-    cols_to_keep = ['timestamp', 'longitude', 'latitude', 'tipo', 'economia', 'municipio', 'atencion', 'location', 'mensaje']
+    cols_to_keep = ['timestamp', 'event_id', 'longitude', 'latitude', 'tipo', 'economia', 'atencion', 'mensaje', 'location']
     df_clean = df[cols_to_keep].dropna()
 
     return df_clean.to_json(orient='records')
