@@ -110,7 +110,6 @@ function makeGraphs(error, recordsJson) {
         .group(function(d) {return "";})
         .columns([function(d) { return d.timestamp.getDate() + "/" + (d.timestamp.getMonth() + 1) + "/" + d.timestamp.getFullYear(); },
                   function (d) { return d.tipo },
-                  function (d) { return d.municipio},
                   function (d) { return d.mensaje },
                   function (d) { return d.atencion }])
         .sortBy(function (d) { return +d.timestamp })
