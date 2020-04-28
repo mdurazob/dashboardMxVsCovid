@@ -9,8 +9,11 @@
   <link rel="stylesheet" href="./static/css/custom.css">
  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--Jquery-->
+
 
 </head>
+
 <body class="application">
 
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -52,8 +55,17 @@
               <div class="chart-stage">
                 <div id="tipo-row-chart"></div>
               </div>
+              <div class="chart-stage">
+                <div class="chart-title"><h4><b>
+                ¿Encontraste a quien ayudar?</b></h4><br>
+                <img src="https://raw.githubusercontent.com/mdurazob/dashboardMxVsCovid/master/input/iconowhats.png"></img>
+                <p style="display:inline"><a href="https://wa.me/525574595228?text=Me%20gustaría%20ofrecer%20ayuda" target="_blank">Envíanos un mensaje</p></a>
+              </div>
+              </div>
             </div>
           </div>
+
+          
           <!-- Brand -->
 
 
@@ -153,18 +165,18 @@
 
   </div>
 
+  <tbody>
+      <div class="scrollit">
   <table id="mytable" class="greyGridTable" width=70% align="center">
         <thead>
             <tr><th><h5>Id</h5></th>
                 <th>
-                    <h5>Fecha</h5></th><th><h5>Petición/Donación</h5></th><th><h5> Estatus</h5></th><th><h5> Mensaje</h5></th>
+                    <h5>Fecha</h5></th><th><h5>Petición/Donación</h5></th><th><h5> Estatus</h5></th><th><h5> Mensaje</h5></th><th><h5> Municipio</h5></th>
                 </tr>
         </thead>
     </table>
-
-  <hr>
- 
-
+ </div>
+</tbody>
   <script src="./static/lib/js/jquery.min.js"></script>
   <script src="./static/lib/js/bootstrap.min.js"></script>
   <script src="./static/lib/js/underscore-min.js"></script>
