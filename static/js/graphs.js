@@ -72,7 +72,7 @@ function makeGraphs(error, recordsJson) {
 
 	economiaChart
         .width(300)
-        .height(100)
+        .height(120)
         .dimension(economiaDim)
         .group(economiaGroup)
         .ordering(function(d) { return -d.value })
@@ -82,7 +82,7 @@ function makeGraphs(error, recordsJson) {
 
     atencionChart
         .width(300)
-        .height(100)
+        .height(150)
         .dimension(atencionDim)
         .group(atencionGroup)
         .ordering(function(d) { return -d.value })
@@ -94,7 +94,7 @@ function makeGraphs(error, recordsJson) {
 
 	tipoChart
 		.width(300)
-		.height(310)
+		.height(210)
         .dimension(tipoDim)
         .group(tipoGroup)
         .ordering(function(d) { return -d.value })
@@ -107,13 +107,15 @@ function makeGraphs(error, recordsJson) {
         .width(768)
         .height(480)
         .dimension(dateDim)
+        .size(Infinity)
         .group(function(d) {return "";})
         .columns([function (d) { return d.event_id },
         		function(d) { return d.timestamp.getDate() + "/" + (d.timestamp.getMonth() + 1) + "/" + d.timestamp.getFullYear(); },
                   function (d) { return d.tipo },
                   function (d) { return d.atencion },
-                   function (d) { return d.mensaje }])
-        .sortBy(function (d) { return +d.timestamp })
+                   function (d) { return d.mensaje },
+                  function (d) { return d.municipio }])
+        .sortBy(function (d) { return +d.municipio })
         .order(d3.descending);
 
     locationChart
@@ -184,3 +186,17 @@ map.addControl(new L.Control.Fullscreen({
         'true': 'Exit Fullscreen'
     }
 }));
+
+$(function() {
+  $('#WAButton').floatingWhatsApp({
+    phone: '1231231231', //WhatsApp Business phone number International format-
+    //Get it with Toky at https://toky.co/en/features/whatsapp.
+    headerTitle: 'Chat with us on WhatsApp!', //Popup Title
+    popupMessage: 'Hello, how can we help you?', //Popup Message
+    showPopup: true, //Enables popup display
+    buttonImage: '<img src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/whatsapp.svg" />', //Button Image
+    //headerColor: 'crimson', //Custom header color
+    //backgroundColor: 'crimson', //Custom background button color
+    position: "right"    
+  });
+});
