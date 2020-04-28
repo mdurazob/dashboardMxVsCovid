@@ -7,7 +7,6 @@ import json
 
 
 data_path = './input/'
-n_samples = 3685
 
 
 def get_location(longitude, latitude, provinces_json):
@@ -39,10 +38,7 @@ def get_data():
    ## df = gen_age_tr.merge(ev, how='left', on='device_id')
   ##  df = df.merge(ph_br_dev_model, how='left', on='device_id')
     #Get n_samples records
-    df = df[df['longitude'] != 0].sample(n=n_samples)
 
-
- 
 
     df['location'] = df.apply(lambda row: get_location(row['longitude'], row['latitude'], provinces_json), axis=1)
 
