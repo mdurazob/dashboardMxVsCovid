@@ -3,6 +3,28 @@
  * Full-page application style
  */
 
+body, html {
+    height: 100%;
+}
+
+tbody {
+    height:500px;
+}
+
+h4 {
+    margin:0px;
+    float: left;
+}
+
+.enviar {
+  display:inline;
+}
+
+.scrollit {
+    overflow:scroll;
+    height:500px;
+}
+
 table.greyGridTable {
   border: 2px solid #FFFFFF;
   width: 100%;
