@@ -94,7 +94,7 @@ function makeGraphs(error, recordsJson) {
 
 	tipoChart
 		.width(300)
-		.height(210)
+		.height(240)
         .dimension(tipoDim)
         .group(tipoGroup)
         .ordering(function(d) { return -d.value })
