@@ -6,9 +6,6 @@ from flask import render_template
 import json
 
 
-data_path = './input/'
-
-
 def get_location(longitude, latitude, provinces_json):
     
     point = Point(longitude, latitude)
@@ -32,7 +29,7 @@ def index():
 @app.route("/data")
 def get_data():
    ## gen_age_tr = pd.read_csv(data_path + 'gender_age_train.csv')
-    df = pd.read_csv(data_path + 'events.csv')
+    df = pd.read_csv(data_path + '/events.csv')
    ## ph_br_dev_model = pd.read_csv(data_path + 'phone_brand_device_model.csv')
 
    ## df = gen_age_tr.merge(ev, how='left', on='device_id')
@@ -49,4 +46,4 @@ def get_data():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1',port=8080,debug=True)
+    app.run(host='0.0.0.0',port=5000,debug=True)
