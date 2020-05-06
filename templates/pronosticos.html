@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Plataforma MéxicoVsCovid19 - Análisis predictivo</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+  <!-- Demo Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.js" type="text/javascript"></script>
+  <script>
+    Holder.addTheme("white", {
+      bg: "#fff",
+      fg: "#a7a7a7",
+      size: 10
+    });
+  </script>
+
+  <!-- keen-analysis@3 -->
+  <script src="https://cdn.jsdelivr.net/npm/keen-analysis@3/dist/keen-analysis.min.js" type="text/javascript"></script>
+
+  <!-- keen-dataviz@3 -->
+  <link href="https://cdn.jsdelivr.net/npm/keen-dataviz@3/dist/keen-dataviz.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/keen-dataviz@3/dist/keen-dataviz.min.js" type="text/javascript"></script>
+ 
+
+  <!-- Dashboard -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./static/css/keen-dashboardsQuarter.css" />
+
+
+</head>
+
+<script src="./static/lib/js/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<body class="keen-dashboard">
+
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+         <img src="https://raw.githubusercontent.com/mdurazob/covidnotebook/master/header.png"></img>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="navbar-nav nav main-nav">
+          <li><a href="{{ url_for('index') }}">Mapa interactivo</a></li>
+          <li><a href="{{ url_for('pronosticos') }}">Análisis predictivo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container grid grid-quarter">
+    <div class="chart-wrapper">
+      <div class="chart-title">
+      Aguascalientes
+            </div>
+      <div class="chart-stage">
+        <div id="grid-1-1">
+          <div class="highcharts-figure">
+    <div id="aguascalientes"></div>
+          </div>
+        </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.8x + 3.4<br>
+        R² = 0.8<br>
+        Margen de error = ±1
+      </div>
+    </div>
+  </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Baja California
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="bajacalifornia"></div>
+          </div>
+      </div>
+      <div class="chart-notes">
+         Ecuación de la recta y parámetros:<br>
+        y = 0.1x + 3.1<br>
+        R² = 0.0192<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Baja California Sur
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="bajacaliforniasur"></div>
+          </div>      </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.8x + 6.2<br>
+        R² = 0.1212<br>
+        Margen de error = ±2
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Campeche
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="campeche"></div>
+          </div>      </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 0.1x + 0.3<br>
+        R² = 0.0313<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Chiapas
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="chiapas"></div>
+          </div>      </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 5.1x - 2.1<br>
+        R² = 0.3437<br>
+        Margen de error = ±6
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Chihuahua
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="chihuahua"></div>
+          </div>      </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.4x + 2.2<br>
+        R² = 0.4<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Ciudad de México
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="cdmx"></div>
+          </div>      </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -11.1x + 182.5<br>
+        R² = 0.0769<br>
+        Margen de error = ±30
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Coahuila
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="coahuila"></div>
+          </div>      </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -1.9x + 9.9<br>
+        R² = 0.71<br>
+        Margen de error = ±2
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Colima
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="colima"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -x + 4.6<br>
+        R² = 0.75<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Durango
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="durango"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 0.4<br>
+        R² = 0<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+       Estado de México
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="edomex"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -5.5x + 113.1<br>
+        R² = 0.08<br>
+        Margen de error = ±15
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Guanajuato
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="guanajuato"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 0.1x + 5.3<br>
+        R² = 0.0014<br>
+        Margen de error = ±2
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Guerrero
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="guerrero"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -9.4x + 61.4<br>
+        R² = 0.52<br>
+        Margen de error = ±10
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Hidalgo
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="hidalgo"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 0.2x + 4.2<br>
+        R² = 0.019<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Jalisco
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="jalisco"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -2.8x + 27.6<br>
+        R² = 0.21<br>
+        Margen de error = ±3
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Michoacán 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="michoacan"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 3.8x - 4.8<br>
+        R² = 0.67<br>
+        Margen de error = ±3
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Morelos 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="morelos"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -36.1x + 243.5<br>
+        R² = 0.4127<br>
+        Margen de error = ±35
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Nayarit 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="nayarit"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -1.1x + 4.5<br>
+        R² = 0.64<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Nuevo León 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="nuevoleon"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 0.3x + 4.7<br>
+        R² = 0.0183<br>
+        Margen de error = ±2
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Oaxaca 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="oaxaca"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -1.2x + 7.2<br>
+        R² = 0.49<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Puebla 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="puebla"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -2.8x + 43<br>
+        R² = 0.038<br>
+        Margen de error = ±10
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Querétaro 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="queretaro"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = 0.3x + 1.7<br>
+        R² = 0.068<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        San Luis Potosí 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="sanluispotosi"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.5x + 3.5<br>
+        R² = 0.178<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Sinaloa 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="sinaloa"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -1.2x + 11.2<br>
+        R² = 0.75<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Sonora 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="sonora"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.4x + 3<br>
+        R² = 0.57<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Tabasco 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="tabasco"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.7x + 13.7<br>
+        R² = 0.092<br>
+        Margen de error = ±2
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Tamaulipas 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="tamaulipas"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.6x + 4.4<br>
+        R² = 0.3214<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Tlaxcala 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="tlaxcala"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.2x + 2.2<br>
+        R² = 0.125<br>
+        Margen de error = ±1
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Veracruz 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="veracruz"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -x + 14.6<br>
+        R² = 0.0422<br>
+        Margen de error = ±3
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Yucatán 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="yucatan"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.8x + 7.2<br>
+        R² = 0.1212<br>
+        Margen de error = ±2
+      </div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        Zacatecas 
+      </div>
+      <div class="chart-stage">
+<div class="highcharts-figure">
+    <div id="zacatecas"></div>
+          </div>       </div>
+      <div class="chart-notes">
+        Ecuación de la recta y parámetros:<br>
+        y = -0.5x + 2.9<br>
+        R² = 0.2232<br>
+        Margen de error = ±1
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Project Analytics -->
+  <script type="text/javascript" src="./static/lib/js/keen-analytics.js"></script>
+  <script>
+    function toggleMenu() {
+      const toggleBtn = document.querySelector('.navbar-toggle');
+
+      toggleBtn.addEventListener('click', (e) => {
+        let menu;
+        if (e.currentTarget.dataset.target) {
+          menu = document.querySelector(e.currentTarget.dataset.target);
+        }
+        if (menu) menu.classList.toggle('collapsed');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', toggleMenu);
+
+  </script>
+
+   <script src="./static/lib/js/serieags.js" type="text/javascript" /></script>
+     <script src="./static/lib/js/seriebc.js" type="text/javascript" /></script>
+    <script src="./static/lib/js/seriebcsur.js" type="text/javascript" /></script>
+  <script src="./static/lib/js/seriecampeche.js" type="text/javascript" /></script>
+    <script src="./static/lib/js/seriechiapas.js" type="text/javascript" /></script>
+    <script src="./static/lib/js/seriecdmx.js" type="text/javascript" /></script>
+    <script src="./static/lib/js/seriechih.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriecoah.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriecol.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriedgo.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serieedomex.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriegro.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriegto.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriehgo.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriejal.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriemich.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriemor.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serienay.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serienl.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serieoax.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriepue.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serieqro.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriesin.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serieslp.js" type="text/javascript" /></script> 
+      <script src="./static/lib/js/serieson.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serietab.js" type="text/javascript" /></script>
+       <script src="./static/lib/js/serietam.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serietlax.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/seriever.js" type="text/javascript" /></script>
+      <script src="./static/lib/js/serieyuc.js" type="text/javascript" /></script>
+    <script src="./static/lib/js/seriezac.js" type="text/javascript" /></script>
+</body>
+
+</html>
